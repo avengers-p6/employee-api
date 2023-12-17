@@ -50,7 +50,7 @@ func main() {
 	v1 := router.Group("/api/v1")
 	docs.SwaggerInfo.BasePath = "/api/v1/employee"
 	routes.CreateRouterForEmployee(v1)
-	url := ginSwagger.URL("http://localhost:8080/swagger/doc.json")
+	url := ginSwagger.URL("http://localhost:8081/swagger/doc.json")
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler, url))
 	router.Run(":8080")
 }
